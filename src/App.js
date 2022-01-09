@@ -1,13 +1,6 @@
 import "./App.css";
 import Button from "./Button";
-
-import Blue50 from "./alpaca/backgrounds/blue50.png";
-import DefaultNose from "./alpaca/nose.png";
-import DefaultNeck from "./alpaca/neck/default.png";
-import DefaultMouth from "./alpaca/mouth/default.png";
-import DefaultHair from "./alpaca/hair/default.png";
-import DefaultEyes from "./alpaca/eyes/default.png";
-import DefaultEars from "./alpaca/ears/default.png";
+import RenderAlpaca from "./RenderAlpaca";
 
 import React, { Component } from "react";
 
@@ -158,7 +151,9 @@ class App extends Component {
       style_options.push(
         <Button
           value={element}
-          selected={this.state.selected_style[this.state.currentMenu] === element}
+          selected={
+            this.state.selected_style[this.state.currentMenu] === element
+          }
           update={() => this.setStyle(this.state.currentMenu, element)}
         />
       );
@@ -168,22 +163,8 @@ class App extends Component {
       <div className="App">
         <h1>alpaca generator</h1>
         <div className="menu">
-          <div className="drawing">
-            <div
-              className="alpaca"
-              style={{
-                backgroundImage: `url(${Blue50})`,
-              }}
-            >
-              <img src={DefaultNose} className="nose" />
-              <img src={DefaultMouth} className="mouth" />
-              <img src={DefaultNeck} className="neck" />
-              <img src={DefaultHair} className="hair" />
-              <img src={DefaultEyes} className="eyes" />
-              <img src={DefaultEars} className="ears" />
-            </div>
-            <div className="download"></div>
-          </div>
+          <RenderAlpaca design={this.state.selected_style}/>
+          <div className="download"></div>
           <div className="options">
             <div className="AccessoriesOptions">
               <div className="title">Accessorize the Alpaca's</div>

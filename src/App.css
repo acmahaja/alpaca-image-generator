@@ -26,51 +26,10 @@
     justify-content: space-between;
 }
 
-.alpaca {
-    width: 300px;
-    height: 300px;
-    background-size: cover;
-    position: relative;
-    z-index: 0;
-}
-
-.alpaca img {
-    height: 300px;
-    width: 300px;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
-
 .title {
     width: 100%;
+    height: 1.5em;
     text-transform: capitalize;
-}
-
-.alpaca .neck {
-    z-index: 1;
-}
-
-.alpaca .nose {
-    z-index: 2;
-}
-
-.alpaca .mouth {
-    z-index: 3;
-}
-
-.alpaca .ears {
-    z-index: 4;
-}
-
-.alpaca .hair {
-    z-index: 5;
-}
-
-.alpaca .eyes {
-    z-index: 6;
 }
 
 .menu {
@@ -93,6 +52,7 @@
 
 .AccessoriesOptions {
     height: 50%;
+    min-height: 182px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
