@@ -3,6 +3,7 @@ import Button from "./Button";
 import RenderAlpaca from "./RenderAlpaca";
 
 import React, { Component } from "react";
+import domtoimage from "dom-to-image-more";
 
 class App extends Component {
   static defaultProps = {
@@ -70,12 +71,29 @@ class App extends Component {
     };
     this.setCurrentMenu = this.setCurrentMenu.bind(this);
     this.setStyle = this.setStyle.bind(this);
+    this.download = this.download.bind(this);
   }
 
   setCurrentMenu(value) {
     this.setState({
       currentMenu: value,
     });
+  }
+
+  download() {
+    var node = document.getElementById("alpaca");
+    domtoimage
+      .toPng(node)
+      .then(function (dataUrl) {
+        var link = document.createElement("a");
+        link.download = "alpaca.jpeg";
+        link.href = dataUrl;
+        link.click();
+        
+      })
+      .catch(function (error) {
+        console.error("oops, something went wrong!", error);
+      });
   }
 
   setStyle(option, value) {
@@ -163,8 +181,15 @@ class App extends Component {
       <div className="App">
         <h1>alpaca generator</h1>
         <div className="menu">
-          <RenderAlpaca design={this.state.selected_style}/>
-          <div className="download"></div>
+          <div className="drawing">
+            <RenderAlpaca design={this.state.selected_style} />
+            <div className="downloadOptions">
+              <div className="Random button">🔀 Random</div>
+              <div className="Download button" onClick={this.download}>
+                🖼️ Download
+              </div>
+            </div>
+          </div>
           <div className="options">
             <div className="AccessoriesOptions">
               <div className="title">Accessorize the Alpaca's</div>
