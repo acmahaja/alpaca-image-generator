@@ -3,7 +3,7 @@ import Button from "./Button";
 import RenderAlpaca from "./RenderAlpaca";
 
 import React, { Component } from "react";
-import domtoimage from "dom-to-image-more";
+let domtoimage = require("dom-to-image-more");;
 
 class App extends Component {
   static defaultProps = {
