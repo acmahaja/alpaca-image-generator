@@ -1,38 +1,107 @@
 .App {
-  text-align: center;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    width: 700px;
+    height: 455px;
+    color: rgb(0, 19, 49);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App h1 {
+    font-size: 2em;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App .menu {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.alpaca {
+    width: 300px;
+    height: 300px;
+    background-size: cover;
+    position: relative;
+    z-index: 0;
 }
 
-.App-link {
-  color: #61dafb;
+.alpaca img {
+    height: 300px;
+    width: 300px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.title {
+    width: 100%;
+    text-transform: capitalize;
+}
+
+.alpaca .neck {
+    z-index: 1;
+}
+
+.alpaca .nose {
+    z-index: 2;
+}
+
+.alpaca .mouth {
+    z-index: 3;
+}
+
+.alpaca .ears {
+    z-index: 4;
+}
+
+.alpaca .hair {
+    z-index: 5;
+}
+
+.alpaca .eyes {
+    z-index: 6;
+}
+
+.menu {
+    height: 80%;
+}
+
+.options {
+    height: 100%;
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.options .title {
+    text-transform: uppercase;
+    font-weight: bolder;
+    color: rgb(0, 19, 49);
+}
+
+.AccessoriesOptions {
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.Style {
+    min-height: 50%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }

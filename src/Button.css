@@ -1,0 +1,28 @@
+.Button {
+    min-width: 50px;
+    height: 40px;
+    border: 1px solid rgb(59, 117, 241);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    padding: 0px 25px;
+    color: rgb(59, 117, 241);
+    margin: 0px 5px;
+    text-transform: capitalize;
+}
+
+.Button:hover {
+    background-color: rgb(35, 80, 156);
+    border: 1px solid rgb(35, 80, 156);
+    color: white;
+    cursor: pointer;
+}
+
+.selected {
+    background-color: rgb(35, 80, 156);
+    border: 1px solid rgb(35, 80, 156);
+    color: white;
+    font-weight: 700;
+}
