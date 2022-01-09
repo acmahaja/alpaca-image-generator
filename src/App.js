@@ -72,6 +72,7 @@ class App extends Component {
     this.setCurrentMenu = this.setCurrentMenu.bind(this);
     this.setStyle = this.setStyle.bind(this);
     this.download = this.download.bind(this);
+    this.random = this.random.bind(this);
   }
 
   setCurrentMenu(value) {
@@ -94,6 +95,20 @@ class App extends Component {
       .catch(function (error) {
         console.error("oops, something went wrong!", error);
       });
+  }
+
+  random(){
+    this.setState({ selected_style: {
+      accessories: this.props.options.accessories[Math.floor(Math.random()*this.props.options.accessories.length)],
+      backgrounds: this.props.options.backgrounds[Math.floor(Math.random()*this.props.options.backgrounds.length)],
+      ears: this.props.options.ears[Math.floor(Math.random()*this.props.options.ears.length)],
+      eyes: this.props.options.eyes[Math.floor(Math.random()*this.props.options.eyes.length)],
+      hair: this.props.options.hair[Math.floor(Math.random()*this.props.options.hair.length)],
+      leg: this.props.options.leg[Math.floor(Math.random()*this.props.options.leg.length)],
+      mouth: this.props.options.mouth[Math.floor(Math.random()*this.props.options.mouth.length)],
+      neck: this.props.options.neck[Math.floor(Math.random()*this.props.options.neck.length)],
+    }
+    })
   }
 
   setStyle(option, value) {
@@ -184,7 +199,7 @@ class App extends Component {
           <div className="drawing">
             <RenderAlpaca design={this.state.selected_style} />
             <div className="downloadOptions">
-              <div className="Random button">🔀 Random</div>
+              <div className="Random button" onClick={this.random}>🔀 Random</div>
               <div className="Download button" onClick={this.download}>
                 🖼️ Download
               </div>
