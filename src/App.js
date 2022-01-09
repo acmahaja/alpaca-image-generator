@@ -194,6 +194,11 @@ class App extends Component {
 
     return (
       <div className="App">
+        <div className="created-by"  href="https://www.acmahaja.com/">
+          <img src="http://www.acmahaja.com/images/profile.png"/>
+          Created by  <a href="https://www.acmahaja.com/">@acmahaja</a>
+        </div>
+
         <h1>alpaca generator</h1>
         <div className="menu">
           <div className="drawing">

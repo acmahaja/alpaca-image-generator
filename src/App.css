@@ -1,3 +1,25 @@
+.created-by {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 1em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.created-by img {
+    height: 2em;
+    width: 2em;
+    border-radius: 50%;
+    margin-right: 0.5em;
+}
+
+.created-by a {
+    margin-left: .25em;
+}
+
 .App {
     box-sizing: border-box;
     padding: 0;
